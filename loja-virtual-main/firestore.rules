@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner() {
+      return signedIn()
+        && request.auth.token.email == 'thiegoluiz8@gmail.com'
+        && request.auth.token.email_verified == true;
+    }
+
+    match /products/{productId} {
+      allow read: if true;
+      allow create, update: if isOwner()
+        && request.resource.data.keys().hasAll(['id', 'name', 'description', 'category', 'price', 'image'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() <= 80
+        && request.resource.data.description is string
+        && request.resource.data.description.size() <= 240
+        && request.resource.data.category in ['media', 'familia', 'grande', 'petiscos', 'bebidas']
+        && request.resource.data.price is number
+        && request.resource.data.price > 0
+        && request.resource.data.price <= 10000
+        && request.resource.data.image is string
+        && request.resource.data.image.size() <= 620000;
+      allow delete: if isOwner();
+    }
+
+    match /profiles/{userId} {
+      allow read, write: if signedIn() && request.auth.uid == userId;
+    }
+
+    match /orders/{orderId} {
+      allow create: if request.resource.data.keys().hasAll(['customer', 'items', 'total', 'status', 'createdAt'])
+        && request.resource.data.keys().hasOnly(['customer', 'items', 'total', 'status', 'createdAt'])
+        && request.resource.data.customer is map
+        && request.resource.data.customer.name is string
+        && request.resource.data.customer.name.size() <= 80
+        && (!('userId' in request.resource.data.customer)
+          || (signedIn() && request.resource.data.customer.userId == request.auth.uid))
+        && request.resource.data.customer.phone is string
+        && request.resource.data.customer.phone.size() <= 20
+        && request.resource.data.customer.address is map
+        && request.resource.data.items is list
+        && request.resource.data.items.size() > 0
+        && request.resource.data.items.size() <= 30
+        && request.resource.data.total is number
+        && request.resource.data.total > 0
+        && request.resource.data.total <= 30000
+        && request.resource.data.status == 'novo'
+        && request.resource.data.createdAt is string;
+      allow read, update, delete: if isOwner();
+    }
+  }
+}

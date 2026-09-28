@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f5ed">
+  <meta name="description" content="Pizzas artesanais, feitas na hora e entregues quentinhas. Peça sua favorita.">
+  <title>Pizzaria Sayonara| Pizza boa, noite melhor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#cardapio">Pular para o cardápio</a>
+
+  <div class="announcement">
+    <span>Forno aceso, massa fresca e entrega caprichada</span>
+    <span class="announcement-hours">Hoje, das 18h às 23h</span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Forno e Brasa, início">
+      <img class="brand-mark" src="img/logo.png" alt="" aria-hidden="true">
+      
+      <span class="brand-name">Pizzaria <i>Sayonara</i><small>PL</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Nossa cozinha</a>
+      <a href="#entrega">Entrega</a>
+      <button class="account-button" id="account-action" type="button">Entrar</button>
+
+    </nav>
+    <button class="cart-button" id="open-cart" type="button" aria-label="Abrir carrinho">
+      <span class="cart-icon" aria-hidden="true">▱</span>
+      <span class="cart-label">Minha sacola</span>
+      <span id="cart-count" aria-live="polite">0</span>
+    </button>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> SUA NOITE MERECE</p>
+        <h1 id="hero-title">Pizza boa.<br><em>Noite melhor.</em></h1>
+        <p class="hero-description">Massa de fermentação lenta, ingredientes de verdade e aquele queijo puxando que muda qualquer plano.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#cardapio">Escolher minha pizza <span aria-hidden="true">↗</span></a>
+          <p class="delivery-note"><span aria-hidden="true">◷</span> Entrega estimada <strong>35–50 min</strong></p>
+        </div>
+        <div class="hero-rating"><span class="rating-stars" aria-label="5 de 5 estrelas">★★★★★</span><span>Feita com carinho, desde a primeira fatia.</span></div>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Pizza artesanal saindo do forno, com queijo e manjericão">
+        <div class="photo-stamp"><span>DA NOSSA</span><strong>cozinha</strong><span>PRA SUA MESA</span></div>
+        <div class="hero-caption"><span>FERMENTAÇÃO NATURAL</span><strong>O sabor começa na massa.</strong></div>
+      </div>
+    </section>
+
+    <section class="promise-row" aria-label="Diferenciais">
+      <div><span class="promise-mark">01</span><p><strong>Massa artesanal</strong><small>Descanso de 48 horas</small></p></div>
+      <div><span class="promise-mark">02</span><p><strong>Ingredientes frescos</strong><small>Selecionados todo dia</small></p></div>
+      <div><span class="promise-mark">03</span><p><strong>Forno bem quente</strong><small>Pizza chega no ponto</small></p></div>
+    </section>
+
+    <section class="menu-section" id="cardapio" aria-labelledby="menu-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> FEITAS NA HORA</p>
+          <h2 id="menu-title">O cardápio</h2>
+        </div>
+        <p class="menu-aside">Escolha a sua favorita.<br>O forno cuida do resto.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar produtos">
+        <button class="filter active" type="button" data-category="todos" aria-pressed="true">Tudo</button>
+        <button class="filter" type="button" data-category="familia" aria-pressed="false">Pizzas família</button>
+        <button class="filter" type="button" data-category="grande" aria-pressed="false">Pizzas grandes</button>
+        <button class="filter" type="button" data-category="media" aria-pressed="false">Pizzas médias</button>
+        <button class="filter" type="button" data-category="petiscos" aria-pressed="false">Petiscos</button>
+        <button class="filter" type="button" data-category="bebidas" aria-pressed="false">Bebidas</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="kitchen-section" id="sobre" aria-labelledby="kitchen-title">
+      <div class="kitchen-image" role="img" aria-label="Pizza artesanal preparada com ingredientes frescos"></div>
+      <div class="kitchen-copy">
+        <p class="eyebrow"><span></span> SEM PRESSA, COM PROPÓSITO</p>
+        <h2 id="kitchen-title">O segredo está<br>no tempo.</h2>
+        <p>A gente acredita que pizza boa não precisa de atalho. Nossa massa descansa por 48 horas, o molho é feito aqui e cada pedido sai do forno só depois que você escolhe.</p>
+        <a class="text-link" href="#cardapio">Encontrar minha pizza <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="delivery-band" id="entrega" aria-labelledby="delivery-title">
+      <div class="delivery-copy">
+        <p class="eyebrow"><span></span> A GENTE LEVA ATÉ VOCÊ</p>
+        <h2 id="delivery-title">Sua mesa.<br>Nosso próximo destino.</h2>
+      </div>
+      <div class="delivery-detail"><strong>35–50 min</strong><span>tempo médio de entrega</span></div>
+      <a class="delivery-link" href="#cardapio" aria-label="Ver cardápio e pedir agora">Pedir agora <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <dialog class="account-dialog" id="account-dialog" aria-labelledby="account-title">
+    <div class="account-panel">
+      <header class="account-header">
+        <div>
+          <p class="eyebrow"><span></span> FORNO & BRASA</p>
+          <h2 id="account-title">Acesse sua conta</h2>
+        </div>
+        <button id="close-account" type="button" aria-label="Fechar acesso">×</button>
+      </header>
+      <div class="account-content" id="account-content">
+        <div class="account-roles" role="group" aria-label="Tipo de acesso">
+          <button class="account-role active" type="button" data-role="customer" aria-pressed="true">Cliente</button>
+          <button class="account-role" type="button" data-role="owner" aria-pressed="false">Proprietário</button>
+        </div>
+        <p class="account-intro" id="account-intro">Entre para acompanhar seus pedidos ou criar sua conta.</p>
+        <form class="account-form" id="account-form">
+          <label id="name-field" hidden>Seu nome
+            <input name="name" type="text" autocomplete="name" maxlength="80">
+          </label>
+          <label>E-mail
+            <input name="email" type="email" autocomplete="email" maxlength="160" required>
+          </label>
+          <label>Senha
+            <input name="password" type="password" autocomplete="current-password" minlength="8" required>
+          </label>
+          <p class="account-message" id="account-message" role="status" aria-live="polite"></p>
+          <button class="primary-button account-submit" type="submit">Entrar</button>
+        </form>
+        <button class="account-switch" id="resend-verification" type="button" hidden>Reenviar e-mail de verificação</button>
+        <button class="account-switch" id="account-switch" type="button">Ainda não tem conta? Cadastre-se</button>
+        <p class="account-demo" id="account-demo" hidden>Entre com a conta proprietária cadastrada no Firebase. O e-mail precisa estar verificado.</p>
+      </div>
+      <section class="account-session" id="account-session" hidden aria-live="polite">
+        <p class="eyebrow"><span></span> ACESSO CONFIRMADO</p>
+        <h3 id="account-greeting"></h3>
+        <p id="account-session-copy"></p>
+        <button class="primary-button" id="open-owner-panel" type="button" hidden>Gerenciar produtos <span aria-hidden="true">→</span></button>
+        <button class="secondary-button account-logout" id="account-logout" type="button">Sair da conta</button>
+      </section>
+      <section class="owner-workspace" id="product-manager" hidden aria-labelledby="manager-title">
+        <div class="manager-panel">
+          <header class="manager-header">
+            <div>
+              <p class="eyebrow"><span></span> ÁREA ADMINISTRATIVA</p>
+              <h2 id="manager-title">Gerenciar produtos</h2>
+            </div>
+            <button id="close-manager" type="button" aria-label="Voltar à conta">×</button>
+          </header>
+          <nav class="manager-tabs" role="tablist" aria-label="Seções administrativas">
+            <button class="manager-tab" id="products-tab-button" type="button" role="tab" aria-selected="true" aria-controls="products-tab-panel">Produtos</button>
+            <button class="manager-tab" id="mercado-pago-tab-button" type="button" role="tab" aria-selected="false" aria-controls="mercado-pago-tab-panel">Mercado Pago</button>
+          </nav>
+          <div class="manager-layout" id="products-tab-panel" role="tabpanel" aria-labelledby="products-tab-button">
+            <form class="product-form" id="product-form">
+              <input name="productId" type="hidden">
+              <label>Nome do produto
+                <input name="name" type="text" maxlength="80" required>
+              </label>
+              <label>Descrição
+                <textarea name="description" rows="3" maxlength="240" required></textarea>
+              </label>
+              <div class="form-row">
+                <label>Categoria
+                  <select name="category" required>
+                    <option value="media">Pizza média</option>
+                    <option value="familia">Pizza família</option>
+                    <option value="grande">Pizza grande</option>
+                    <option value="petiscos">Petisco</option>
+                    <option value="bebidas">Bebida</option>
+                  </select>
+                </label>
+                <label>Preço (R$)
+                  <input name="price" type="number" min="0.01" max="10000" step="0.01" required>
+                </label>
+              </div>
+              <label>Imagem do produto (PNG)
+                <input name="image" type="file" accept="image/png,.png" required>
+              </label>
+              <img class="product-image-preview" id="product-image-preview" alt="Prévia da imagem selecionada" hidden>
+              <div class="form-actions">
+                <button class="primary-button" id="save-product" type="submit">Cadastrar produto</button>
+                <button class="secondary-button" id="new-product" type="button">Limpar</button>
+              </div>
+            </form>
+            <section class="manager-catalog" aria-labelledby="manager-list-title">
+              <h3 id="manager-list-title">Produtos cadastrados</h3>
+              <div class="manager-list" id="manager-list"></div>
+            </section>
+          </div>
+          <section class="mercado-pago-panel" id="mercado-pago-tab-panel" role="tabpanel" aria-labelledby="mercado-pago-tab-button" hidden>
+            <div class="mercado-pago-settings">
+              <div>
+                <h3>Credenciais da integração</h3>
+                <p class="mercado-pago-copy">Os valores são enviados diretamente ao Secret Manager do Firebase. Deixe um campo vazio para manter a credencial atual.</p>
+              </div>
+              <p class="mercado-pago-status" id="mercado-pago-status" role="status" aria-live="polite">Verificando configuração...</p>
+              <form class="mercado-pago-form" id="mercado-pago-form">
+                <label>Access Token
+                  <input name="accessToken" type="password" autocomplete="new-password" maxlength="512" spellcheck="false" placeholder="TEST-... ou APP_USR-...">
+                </label>
+                <label>Assinatura secreta do webhook
+                  <input name="webhookSecret" type="password" autocomplete="new-password" maxlength="256" spellcheck="false" placeholder="Informe a chave do painel Mercado Pago">
+                </label>
+                <p class="account-message" id="mercado-pago-message" role="status" aria-live="polite"></p>
+                <button class="primary-button" id="save-mercado-pago" type="submit">Salvar credenciais</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </dialog>
+
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-header">
+      <div><p class="eyebrow"><span></span> SEU PEDIDO</p><h2 id="cart-title">Na sacola</h2></div>
+      <button id="close-cart" type="button" aria-label="Fechar carrinho">×</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <form class="delivery-form" id="delivery-form">
+        <h3>Endereço de entrega</h3>
+        <label>Rua e endereço
+          <input name="street" type="text" autocomplete="street-address" maxlength="120" required>
+        </label>
+        <div class="delivery-form-row">
+          <label>Número
+            <input name="number" type="text" autocomplete="address-line2" maxlength="15" required>
+          </label>
+          <label>CEP
+            <input name="postalCode" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="9" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000" required>
+          </label>
+        </div>
+        <label>Bairro
+          <input name="neighborhood" type="text" autocomplete="address-level3" maxlength="80" required>
+        </label>
+        <label>Cidade
+          <input name="city" type="text" autocomplete="address-level2" maxlength="80" required>
+        </label>
+        <label>Telefone para contato
+          <input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="15" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" placeholder="(11) 99999-9999" required>
+        </label>
+        <label>Complemento (opcional)
+          <input name="complement" type="text" autocomplete="address-line2" maxlength="80">
+        </label>
+        <div class="total"><span>Total do pedido</span><strong id="cart-total">R$ 0,00</strong></div>
+        <button class="primary-button checkout" id="checkout" type="submit">Continuar para pagamento <span aria-hidden="true">→</span></button>
+        <p class="checkout-message" id="checkout-message" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </aside>
+  <button class="overlay" id="overlay" type="button" aria-label="Fechar carrinho"></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#inicio" aria-label="Forno e Brasa, voltar ao início">
+      <img class="brand-mark" src="img/logo.png" alt="" aria-hidden="true">
+      <span class="brand-name">forno <i>&</i> brasa<small>PIZZARIA ARTESANAL</small></span>
+    </a>
+    <span>Feito no forno, entregue com carinho.</span>
+    <span>© 2026 Forno & Brasa</span>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
